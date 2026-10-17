@@ -16,15 +16,21 @@ NOTE: The clean conversion scripts are under development and will be provided sh
 
 ---
 
-## Model Training
+## Model Training (or Fine-tuning)
 
 MiMoQuant uses the [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) architecture for object detection. We chose YOLOX-m (medium) for a balance between accuracy and computational efficiency.
 
 You can refer to the YOLOX documentation for detailed information on training and fine-tuning the model [in the official repository](https://github.com/Megvii-BaseDetection/YOLOX/blob/main/docs/train_custom_data.md).
 
+In order to train from scratch, you will need to use the pre-trained weights for YOLOX-m as a starting point, downloading it from the YOLOX repository.
+
 Pretrained weights for the YOLOX-m that were used to train the MiMoQuant analysis model are available in the `pretrained_weights/` directory. You may as well use these weights as a starting point for transfer learning or fine-tuning on your own dataset.
 
 There is an example configuration file `yolox_m_mimoquant.py` in the `pretrained_weights/` directory that specifies the model architecture, dataset paths, and training parameters. You need to modify this file to suit your dataset path and training requirements. The defaults in this file are what we used to train the MiMoQuant analysis model.
+
+---
+
+## Inference Model Conversion
 
 After the training process, the best model weights will be saved in the `YOLOX_outputs/` directory of the YOLOX train base folder. You will need to convert this weights file to onnxruntime format for inference in MiMoQuant.
 
@@ -41,5 +47,7 @@ OR
 To convert the trained weights to onnx Navigate to the YOLOX base folder with activated virtual environment and run the following command:
 
 ```bash
-> python tools/export_onnx.py -n yolox-m --opset 18 --output-name inference/sample_inference.onnx -f exps/yolox_m_mimoquant.py -c YOLOX_outputs/best_ckpt.pth
+> python tools/export_onnx.py -n yolox-m --opset 18 --output-name inference/your_inference_model_name.onnx -f exps/yolox_m_mimoquant.py -c YOLOX_outputs/best_ckpt.pth
 ```
+
+Keep in mind that later you will need to copy the generated onnx file to the `src/analyzers/models/` folder and update the new model name in `src/managers/AnalysisManager.py` source code for problem-free inference in MiMoQuant.
