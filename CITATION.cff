@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "MiMoQuant"
+version: 0.3.1
+license: "GPL-3.0-only"
+type: software
+abstract: "MiMoQuant is an open-source tool for rapid quantification of fragments and branching points in mitochondrial image analysis."
+date-released: 2026-10-17
+url: "https://github.com/hamedonline/MiMoQuant"
+repository-code: "https://github.com/hamedonline/MiMoQuant"
+message: "If you use this software, please cite it using the metadata below."
+authors:
+  - family-names: "Homaeirad"
+    given-names: "Hamed"
+    affiliation: "Universität Innsbruck"
+    orcid: "https://orcid.org/0000-0003-4932-2820"
+  - family-names: "Degen"
+    given-names: "Antonia"
+    affiliation: "Medizinische Universität Innsbruck"
+    orcid: "https://orcid.org/0009-0008-2825-1764"
+  - family-names: "Hagenbuchner"
+    given-names: "Judith"
+    affiliation: "Medizinische Universität Innsbruck"
+    orcid: "https://orcid.org/0000-0003-1396-3407"
+  - family-names: "Neumann"
+    given-names: "Lukas"
+    affiliation: "Universität Innsbruck"
+    orcid: "https://orcid.org/0000-0003-3263-5724"
+keywords:
+  - Annotation
+  - Image analysis
+  - Machine learning
+  - Software
+  - Mitochondria
+  

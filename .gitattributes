@@ -1,0 +1,4 @@
+# to ensure consistent line endings across platforms
+* text=auto
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.onnx filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,13 @@
+numpy
+pandas
+pyyaml
+customtkinter
+CTkToolTip
+astropy
+pillow
+scikit-image
+opencv-python
+matplotlib
+xlsxwriter
+onnxruntime
+pyinstaller
