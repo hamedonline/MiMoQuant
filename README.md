@@ -88,11 +88,19 @@ Note: a shorter and more focused video is in preparation and will be available s
 
 The dataset used for training and evaluating the MiMoQuant tool is available in a separate [repository in ZENODO](https://zenodo.org/records/23413787). It contains the collection of 2D microscopy images of mitochondrial morphology and corresponding annotations that were used to train the analysis model. Furthermore, the dataset contains annotation metadata compatible with MiMoQuant, alongside the algorithmically generated bounding-box JSON files for each image, compatible with [labelme](https://github.com/wkentaro/labelme).
 
+Moreover, we provide sample images if you want to test the software without downloading the full dataset. These images are located in the `sample_images/` folder of this repository. Both Whole Slide Images (WSI) and cropped samples of Regions of Interest (ROIs) are provided as the sample data. The images used for the publication figures are also included in a separate file.
+
+```text
+sample_images/
+├── Publication-Images.zip
+└── Sample-Images.zip
+```
+
 ---
 
 ## 🧠 Model Retraining
 
-Refer to the [retraining folder](retraining/README.md) for detailed instructions on how to retrain the analysis model using your own annotated images. This includes steps for data preparation, model training, and converting trained weights for inference in MiMoQuant.
+Refer to the [`/retraining`](retraining/README.md) folder for detailed instructions on how to retrain the analysis model using your own annotated images. This includes steps for data preparation, model training, and converting trained weights for inference in MiMoQuant.
 
 ---
 
